@@ -11,6 +11,8 @@
   align-items: center;
   padding: 50px 0 10px;
   height: 100vh;
+  max-width: 643px;
+  margin: auto;
 }
 .battery__img {
   margin-bottom: 20px;
