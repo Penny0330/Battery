@@ -16,6 +16,10 @@
 }
 .battery__img {
   margin-bottom: 20px;
+  display: none;
+}
+.battery__img.show {
+  display: block;
 }
 .battery__title {
   font-size: 40px;
@@ -30,12 +34,19 @@
   padding: 12px 20px;
   margin-bottom: 50px;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.25);
+  display: none;
+}
+.battery__box.green {
+  background: #A5C9CA;
 }
 .battery__box.yellow {
   background: #FED988;
 }
 .battery__box.grey {
   background: #D8D8D8;
+}
+.battery__box.show {
+  display: flex;
 }
 .battery__footer {
   display: flex;
@@ -44,6 +55,7 @@
 }
 .battery__footer img {
   margin-right: 8px;
+  transform: rotate(15deg);
 }
 .battery__footer span {
   margin-right: 10px;

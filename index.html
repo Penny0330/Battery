@@ -8,18 +8,29 @@
 </head>
 <body>
     <div class="battery__container">
-        <img class="battery__img" src="./image/lightning-yellow.png" alt="充電中">
-        <div class="battery__title">100%</div>
-        <div class="battery__box yellow">
-            <div class="battery__box-tile">充電</div>
-            <div class="battery__box-time">02：13：59</div>
+        <img class="battery__img canUse" src="./image/lightning-green.png" alt="放電顯示">
+        <img class="battery__img isCharging" src="./image/lightning-yellow.png" alt="充電顯示">
+        <div class="battery__title" id="now-battery">100%</div>
+        <!-- 放電中 -->
+        <div class="battery__box green canUse">
+            <div class="battery__box-tile">可使用</div>
+            <div class="battery__box-time" id="time">02：13：59</div>
         </div>
-        <div class="battery__box grey">
+        <div class="battery__box grey canUse">
+            <div class="battery__box-tile">充電</div>
+            <div class="battery__box-time">--：--：--</div>
+        </div>
+        <!-- 充電中 -->
+        <div class="battery__box yellow isCharging">
+            <div class="battery__box-tile">充電</div>
+            <div class="battery__box-time" id="time">02：13：59</div>
+        </div>
+        <div class="battery__box grey isCharging">
             <div class="battery__box-tile">可使用</div>
             <div class="battery__box-time">--：--：--</div>
         </div>
         <footer class="battery__footer">
-            <img src="./image/lightning-logo.png" alt="">
+            <img src="./image/lightning-logo.png" alt="Logo">
             <span>2024</span>
             <span>Battery Monitor</span>
         </footer>
