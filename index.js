@@ -26,13 +26,13 @@ function toggleShowClass(selector, add) {
 
 // 可用時間
 function updateBatteryCanUseTime (dischargingTime) {
-    const canUseTime = document.getElementById('time');
+    const canUseTime = document.getElementById('use-time');
     canUseTime.innerText = formatTime(dischargingTime);
 };
 
 // 充電時間
 function updateBatteryChargingTime (chargingTime) {
-    const needChargingTime = document.getElementById('time');
+    const needChargingTime = document.getElementById('need-time');
     needChargingTime.innerText = formatTime(chargingTime);
 };
 
@@ -59,8 +59,8 @@ navigator.getBattery().then((battery) => {
     // 監聽
     battery.onlevelchange = () => updateBatteryLevel(battery.level);
     battery.onchargingchange = () => updateBattery(battery);
-    battery.onchargingtimechange = () => updateBatteryChargingTime(chargingTime);
-    battery.ondischargingtimechange = () => updateBatteryCanUseTime(dischargingTime);
+    battery.onchargingtimechange = () => updateBatteryChargingTime(battery.chargingTime);
+    battery.ondischargingtimechange = () => updateBatteryCanUseTime(battery.dischargingTime);
 })
 
 
