@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./scss/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
     <div class="battery__container">
+        <div class="battery__error">
+            <i class="fa-solid fa-circle-xmark"></i>
+            <h4>Sorry... Your device doesn’t support this feature</h4>
+        </div>
         <img class="battery__img canUse" src="./image/lightning-green.png" alt="放電顯示">
         <img class="battery__img isCharging" src="./image/lightning-yellow.png" alt="充電顯示">
-        <div class="battery__title" id="now-battery">100%</div>
+        <div class="battery__title" id="now-battery"></div>
         <!-- 放電中 -->
         <div class="battery__box green canUse">
             <div class="battery__box-tile">可使用</div>

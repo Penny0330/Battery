@@ -14,6 +14,15 @@
   max-width: 643px;
   margin: auto;
 }
+.battery__error {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  display: none;
+}
+.battery__error .fa-circle-xmark {
+  color: #F05454;
+}
 .battery__img {
   margin-bottom: 20px;
   display: none;

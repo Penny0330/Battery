@@ -52,6 +52,11 @@ function updateBattery (battery) {
 }
 
 navigator.getBattery().then((battery) => {
+    if (!battery) {
+        const error = document.querySelector('.battery__error')
+        error.style.display = 'flex'
+        return
+    }
     // init
     updateBatteryLevel(battery.level);
     updateBattery(battery);
