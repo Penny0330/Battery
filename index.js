@@ -51,23 +51,26 @@ function updateBattery (battery) {
     }
 }
 
-navigator.getBattery().then((battery) => {
-    if (!battery) {
-        const error = document.querySelector('.battery__error')
-        error.style.display = 'flex'
+(function init () {
+    // 是否支援
+    if (!('getBattery' in navigator)) {
+        const errorElement = document.querySelector('.battery__error')
+        errorElement.style.display = 'flex'
         return
     }
-    // init
-    updateBatteryLevel(battery.level);
-    updateBattery(battery);
 
-    // 監聽
-    battery.onlevelchange = () => updateBatteryLevel(battery.level);
-    battery.onchargingchange = () => updateBattery(battery);
-    battery.onchargingtimechange = () => updateBatteryChargingTime(battery.chargingTime);
-    battery.ondischargingtimechange = () => updateBatteryCanUseTime(battery.dischargingTime);
-})
-
+    navigator.getBattery().then((battery) => {
+        // init
+        updateBatteryLevel(battery.level);
+        updateBattery(battery);
+    
+        // 監聽
+        battery.onlevelchange = () => updateBatteryLevel(battery.level);
+        battery.onchargingchange = () => updateBattery(battery);
+        battery.onchargingtimechange = () => updateBatteryChargingTime(battery.chargingTime);
+        battery.ondischargingtimechange = () => updateBatteryCanUseTime(battery.dischargingTime);
+    })
+}) ()
 
 // level: 0-1（目前電量）
 // charging: true/false（是否正在充電）
